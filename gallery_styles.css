@@ -1,0 +1,20 @@
+#galleryFrame {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: inline;
+}
+
+#galleryFrame article {
+	display: inline-block;
+	width: 100%;
+}
+
+#galleryFrame  article img{
+	max-width: 100%;
+	display: inline;
+	overflow: hidden;
+	float: right;
+
+
+}
