@@ -1,6 +1,6 @@
 <?php
 //Global Variables
-$dir = "./images/gallery/";
+$dir = "../images/gallery/";
 $imgArray = array();
 $reversed = array();
 $numPhotos = 0;
@@ -17,7 +17,7 @@ function main(){
 function scan_folder_for_albums(){
     global $imgArray, $size, $numAlbums, $numPhotos, $index, $reversed, $folder_name;
     
-    foreach (glob('./images/gallery/*', GLOB_ONLYDIR) as $folder) {      
+    foreach (glob('../images/gallery/*', GLOB_ONLYDIR) as $folder) {      
         foreach (glob($folder."/*") as $image) {
         $imgArray[$index] = $image;
         $index += 1;
