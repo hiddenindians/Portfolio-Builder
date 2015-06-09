@@ -30,7 +30,7 @@ function buildGallery(initArray) {
 			albumName = albumSplit[j].toString();
 		}
 		//append album to gallery
-		$("#galleryFrame").append("<div id=\""+albumName+"\"><div>");
+		$("#galleryFrame").append("<div id=\""+albumName+"\" class=\"album\"> <div>");
 		
 		//update indexes
 		numPhotos = initArray[index];

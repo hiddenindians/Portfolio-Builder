@@ -1,20 +1,16 @@
 #galleryFrame {
-	width: 100%;
+	width: auto%;
 	height: 100%;
-	overflow: hidden;
-	display: inline;
 }
-
-#galleryFrame article {
+.album{
 	display: inline-block;
-	width: 100%;
+	width: auto;
+	height: 100%;
+	overflow: scroll;
 }
 
-#galleryFrame  article img{
+.album img {
+	float: left;
 	max-width: 100%;
-	display: inline;
-	overflow: hidden;
-	float: right;
-
-
 }
+
