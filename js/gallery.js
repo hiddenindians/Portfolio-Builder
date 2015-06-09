@@ -11,15 +11,7 @@ function readPortfolio(callback) {
 		}
 	});
 };
-function trimAlbumName(input){
-	input = input.toString();
-	var split = input.split("/");
-	var index = 0;
-	for (var i = 0; i < split.length; i++){
-		index = i;
-	}
-	return split[i];
-}
+
 function buildGallery(initArray) {
 	var numAlbums;
 	var numPhotos;
