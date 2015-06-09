@@ -11,28 +11,47 @@ function readPortfolio(callback) {
 		}
 	});
 };
-
-
-
-// var initArray = (function () {
-// 	var initArray = null;
-// 	$.ajax({
-// 		async: false,
-// 		type: 'GET',
-// 		url: 'php/build.php',
-// 		dataType: 'json',
-// 		success: function (data) {
-// 			initArray = data;
-// 		}
-// 	});
-//     return initArray;
-// })();
-
-
+function trimAlbumName(input){
+	input = input.toString();
+	var split = input.split("/");
+	var index = 0;
+	for (var i = 0; i < split.length; i++){
+		index = i;
+	}
+	return split[i];
+}
 function buildGallery(initArray) {
-	for (var i =0 ; i < initArray.length; i++){
-		alert(initArray[i]);
+	var numAlbums;
+	var numPhotos;
+	var albumName;
+	var albumSplit;
+	var index = 1;
+
+	numAlbums = parseInt(initArray[0]);
+
+	for (var i = 0 ; i < numAlbums; i++){
+		//trim album name
+		albumName = initArray[index+1].toString();
+		
+		albumSplit = albumName.split("/");
+		for (var j = 0; j < albumSplit.length; j++){
+			albumName = albumSplit[j].toString();
+		}
+		//append album to gallery
+		$("#galleryFrame").append("<div id=\""+albumName+"\"><div>");
+		
+		//update indexes
+		numPhotos = initArray[index];
+		
+		index = index + 2; 
+		//add images to gallery
+		for(var k = 0; k < numPhotos; k++){
+			$("#" + albumName).append("<img src=\"" + initArray[index] + "\" />")
+			index = index + 1;
+		}
 	}
 };
 
-readPortfolio(buildGallery);
+
+
+$(document).ready(readPortfolio(buildGallery));
